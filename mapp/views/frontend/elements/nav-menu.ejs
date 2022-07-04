@@ -1,0 +1,24 @@
+<!-- Start nav -->
+<nav class="menu">
+    <div class="container">
+        <% include ./logo %>
+
+        <% include ./mobile-toggle %>
+        
+        <div id="menu-list">
+            <ul class="nav-list">
+                <% include ./nav-for-tablet %>
+                
+                <li><a href="/">Home</a></li>
+               
+                <% include ./category %>
+
+                <li><a href="/">Contact</a></li>
+
+                <% include ./account %> 
+                
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- End nav -->

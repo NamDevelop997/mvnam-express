@@ -1,0 +1,27 @@
+<%  
+        const page = 'articles'
+        const linkPrefix = `${systemConfig.prefix_admin}/post-manager/${page}/`;
+        let   folderThumb = `../../../uploads/${page}/`;
+
+%> 
+
+<% if (listItemsSpecial.length > 0) { %>
+    <div class="owl-carousel owl-theme slide" id="featured">
+        <% listItemsSpecial.forEach(item => { %>
+            <div class="item">
+                <article class="featured">
+                    <div class="overlay"></div>
+                    <figure>
+                        <img src="<%= folderThumb + item.thumb %>" alt="<%= item.name %>" >
+                    </figure>
+                    <div class="details">
+                        <div class="category"><a href="#"><%= item.category.name %> </a></div>
+                        <h1><a href="single.html"><%= item.name %></a></h1>
+                        <div class="time"><%= moment(item.created.time).format(systemConfig.custom_long_time_FE); %> </div>
+                    </div>
+                </article>
+            </div>
+        <% }) %>
+       
+    </div>
+<% } %>

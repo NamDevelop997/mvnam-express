@@ -1,0 +1,77 @@
+<% 
+        const page          = 'articles'
+        const linkPrefix    = `${systemConfig.prefix_admin}/post-manager/${page}/`;
+        const folderThumb   = `../../../uploads/${page}/`;
+
+%>
+<% include ../helpers/textLimit %> 
+
+
+<div class="line">
+    <div>Latest News</div>
+</div>
+<div class="row">
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="row">
+            <% for (let i = 0; i < listItemsLatestNews.length - 2; i++) { %> 
+                <article class="article col-md-12">
+                    <div class="inner">
+                        <figure>
+                            <a href="single.html">
+                                <img src="<%= folderThumb + listItemsLatestNews[i].thumb %>" alt="<%= listItemsLatestNews[i].name %>">
+                            </a>
+                        </figure>
+                        <div class="padding">
+                            <div class="detail">
+                                <div class="time"><%= moment(listItemsLatestNews[i].created.time).format(systemConfig.custom_long_time_FE); %></div>
+                                <div class="category"><a href="#"><%= listItemsLatestNews[i].category.name %></a></div>
+                            </div>
+                            <h2><a href="single.html"><%= listItemsLatestNews[i].name %> </a></h2>
+                            <p><%= textLimitHelper(listItemsLatestNews[i].short_content, 175) %></p>
+                            <footer>
+                                <!-- <a href="#" class="love"><i class="ion-android-favorite-outline"></i> <div>1263</div></a> -->
+                                <a class="btn btn-primary more" href="single.html">
+                                    <div>More</div>
+                                    <div><i class="ion-ios-arrow-thin-right"></i></div>
+                                </a>
+                            </footer>
+                        </div>
+                    </div>
+                </article>
+            <% } %> 
+           
+
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="row">
+            <% for (let i = 2; i < listItemsLatestNews.length; i++) { %> 
+                <article class="article col-md-12">
+                    <div class="inner">
+                        <figure>
+                            <a href="single.html">
+                                <img src="<%= folderThumb + listItemsLatestNews[i].thumb %>" alt="<%= listItemsLatestNews[i].name %>">
+                            </a>
+                        </figure>
+                        <div class="padding">
+                            <div class="detail">
+                                <div class="time"><%= moment(listItemsLatestNews[i].created.time).format(systemConfig.custom_long_time_FE); %></div>
+                                <div class="category"><a href="#"><%= listItemsLatestNews[i].category.name %> </a></div>
+                            </div>
+                            <h2><a href="single.html"><%= listItemsLatestNews[i].name %> </a></h2>
+                            <p><%= textLimitHelper(listItemsLatestNews[i].short_content, 175) %></p>
+                            <footer>
+                                <!-- <a href="#" class="love"><i class="ion-android-favorite-outline"></i> <div>1263</div></a> -->
+                                <a class="btn btn-primary more" href="single.html">
+                                    <div>More</div>
+                                    <div><i class="ion-ios-arrow-thin-right"></i></div>
+                                </a>
+                            </footer>
+                        </div>
+                    </div>
+                </article>
+            <% } %> 
+            
+        </div>
+    </div>
+</div>

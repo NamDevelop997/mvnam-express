@@ -1,0 +1,13 @@
+
+
+
+<li class="dropdown magz-dropdown">
+    <a href="category.html">Category<i class="ion-ios-arrow-right"></i></a>
+    <ul class="dropdown-menu">
+        <% listCategory.forEach(item => { %>
+            <li><a href="/category/<%= item.id %>"><%= item.name %> </a></li>
+            <% }) %>
+    </ul>
+</li>
+
+
