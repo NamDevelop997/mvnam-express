@@ -69,7 +69,9 @@ app.use(express.static(path.join(__base_app , 'public')));
 app.locals.systemConfig = systemConfig;
 
 app.use(`/${systemConfig.prefix_admin}`, require(__base_app +'routes/backend/index'));
-app.use(`/${systemConfig.prefix_frontend}`, require(__base_app +'routes/frontend/index'));
+// app.use(`/${systemConfig.prefix_frontend}`, require(__base_app +'routes/frontend/index'));
+app.use(`/`, require(__base_app +'routes/backend/dashboard'));
+
 
 app.get('/', async (req, res)=>{
   let countCategory = 0 ;
